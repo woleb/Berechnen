@@ -15,14 +15,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         button.setOnClickListener {
-            zahl1 = Integer.parseInt(editZahl1.text.toString())
-            zahl2 = Integer.parseInt(editZahl2.text.toString())
-            berechnen()
-            textfeld.text = ergebnis.toString()
+           // zahl1 = Integer.parseInt(editZahl1.text.toString())
+           // zahl2 = Integer.parseInt(editZahl2.text.toString())
+            var out = berechnen(Integer.parseInt(editZahl1.text.toString()), Integer.parseInt(editZahl2.text.toString()))
+            textfeld.text = out
         }
     }
 
-    fun berechnen () {
+    fun berechnen (zahl1: Int, zahl2: Int) :String {
+        var ergebnis = 0
         ergebnis = zahl1 + zahl2
+        return ergebnis.toString()
     }
 }
